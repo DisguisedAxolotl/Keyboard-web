@@ -1,0 +1,26 @@
+{
+  "name": "keyboard-web",
+  "version": "1.0.0",
+  "description": "A website to document my mechanical keyboard project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Not test message lol\" && exit 1",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DisguisedAxolotl/Keyboard-web.git"
+  },
+  "keywords": [
+    "keyboard",
+    "mechanical",
+    "keyboard",
+    "website"
+  ],
+  "author": "Jasper Halkowich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DisguisedAxolotl/Keyboard-web/issues"
+  },
+  "homepage": "https://github.com/DisguisedAxolotl/Keyboard-web#readme"
+}
