@@ -1,0 +1,27 @@
+html {
+    --picton-blue: #00a6fbff;
+    --steel-blue: #0582caff;
+    --lapis-lazuli: #006494ff;
+    --prussian-blue: #003554ff;
+    --rich-black: #051923ff;
+    background-color: black;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header a {
+    padding: 10px;
+    background-color: #333;
+    border-radius: 30px; 
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}

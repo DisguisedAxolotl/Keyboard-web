@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
-    // Return your Object options:
-    eleventyConfig.addPassthroughCopy("views/index.css");
+    // Pass through the CSS file correctly
+    eleventyConfig.addPassthroughCopy("views/_includes/main.css");
+  
     return {
       passthroughFileCopy: true,
       dir: {
@@ -11,3 +12,4 @@ module.exports = function(eleventyConfig) {
       }
     }
   };
+  

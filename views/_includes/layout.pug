@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/_includes/main.css")
+    block scripts
+    title #{title} - Halkowich.com
+  body
+    div.header
+      a.title(href="../") Halkowich.com
+      - 
+        var pages = {
+          pcb: "PCB",
+          case: "Case",
+          software: "Software",
+          about: "About"
+        }
+      each value, key in pages
+        a(href='/' + key) #{value}
+    block content
