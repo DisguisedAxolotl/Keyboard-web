@@ -118,7 +118,7 @@ h1 {
     z-index: 100;
     font-size: initial;
     font-weight: initial;
-    
+    max-width: 25em;
 }
 
 .glossary-key:hover > .glossary-tooltip {
