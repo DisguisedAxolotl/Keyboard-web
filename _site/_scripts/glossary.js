@@ -1,8 +1,5 @@
-// Function to replace terms in text nodes with glossary terms
-console.log('Script is loaded');
-
 function applyGlossaryTooltips() {
-    const glossary = window.glossary || {}; // Use the glossary data from the script
+    const glossary = window.glossary || {};
 
     function replaceTextWithTooltip(node) {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -19,7 +16,7 @@ function applyGlossaryTooltips() {
             if (newText !== text) {
                 const span = document.createElement('span');
                 span.innerHTML = newText;
-                span.classList.add('glossary-highlight'); // Add a class for green text
+                span.classList.add('glossary-highlight'); 
                 node.parentNode.replaceChild(span, node);
             }
         } else if (node.nodeType === Node.ELEMENT_NODE) {
@@ -46,5 +43,4 @@ function initializeGlossary() {
         });
 }
 
-// Execute the function once the document is fully loaded
 document.addEventListener('DOMContentLoaded', initializeGlossary);

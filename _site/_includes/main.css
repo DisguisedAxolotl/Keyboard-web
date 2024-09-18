@@ -29,6 +29,7 @@ body {
     justify-content: center;
     border-radius: 50px;
     border: 1px solid #8184bd;
+    z-index: 2;
 }
 
 .header-item a {
@@ -105,8 +106,9 @@ h1 {
 
 /* Glossary CSS */
 .glossary-key {
-    position: relative;
+    
     color: green; /* Set text color to green */
+    z-index: 0;
 }
 
 .glossary-tooltip {
@@ -115,9 +117,10 @@ h1 {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 5px;
-    z-index: 1000;
+    z-index: 100;
+    font-size: initial;
 }
 
-.glossary-key:hover .glossary-tooltip {
+.glossary-key:hover > .glossary-tooltip {
     display: block;
 }
