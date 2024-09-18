@@ -1,0 +1,5 @@
+{
+    "Keyboard": "The device that you are in the process of building. Made up of keycaps, switches, a PCB, a microcontroller, a case, and various other components.",
+    "Microcontroller": "The device attached to the PCB of the keyboard responsible for converting signals from the key matrix into commands to send to the computer as an HID."
+}
+  
