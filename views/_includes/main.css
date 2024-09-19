@@ -1,76 +1,108 @@
-html {
-    --picton-blue: #00a6fbff;
-    --steel-blue: #0582caff;
-    --lapis-lazuli: #006494ff;
-    --prussian-blue: #003554ff;
-    --rich-black: #051923ff;
-    background-color: black;
-    color: white;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+:root {
+    /* Color Variables */
+    --primary-text-color: #fff;
+    --secondary-text-color: #eee;
+    --primary-background-color: #001122;
+    --secondary-background-color: #061a3b;
 
+    /* Glossary Colors */
+    --glossary-highlight-color: #00ff00;
+    --glossary-background-color: #062f06;
+    --glossary-border-color: #00ff00;
+
+    /* Island Styling */
+    --island-border-color: #8184bd;
+    --island-background-color: #000000;
+    --island-text-color: #ffffff;
+
+    /* Link Colors */
+    --link-color: #00a6fb;
+    --link-hover-color: #003554;
+
+    /* Table Colors */
+    --table-background: #1d1f27;
+    --table-header-background: #282c34;
+    --table-header-text: #ffffff;
+    --table-border: #3d4149;
+    --table-hover-background: #333842;
+    --table-row-background-alt: #20232a;
+    --table-cell-text: #d4d4d6;
+
+    /* General Borders */
+    --general-border-color: #353531;
 }
+
+html {
+    background-color: black;
+    color: var(--primary-text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 body {
     margin: 0;
 }
 
+/* Header */
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 0px;
+    top: 0;
 }
 
 .island {
     margin: 10px;
     display: flex;
-    background-color: black;
+    background-color: var(--island-background-color);
+    color: var(--island-text-color);
     align-items: center;
     justify-content: center;
     border-radius: 50px;
-    border: 1px solid #8184bd;
+    border: 2px solid var(--island-border-color);
     z-index: 2;
 }
 
-.header-item a {
-    text-decoration: none;
-    color: inherit;
-    transition: .3s;
-}
+/* Header Items */
 .header-item {
     padding: 10px;
-    border-radius: 30px; 
+    border-radius: 30px;
     margin: 5px;
-    color: var(--picton-blue);
+    color: var(--link-color);
 }
+
 .header-item:hover {
-    color: #fff;
-    background-color: var(--prussian-blue);
+    color: var(--primary-text-color);
+    background-color: var(--link-hover-color);
 }
-.header-item a:hover {
-    color: #fff;
-}
+
+/* Footer */
 .footer {
     display: flex;
-    background-color: black;
-    position: fixed;
-    bottom: 0px;
+    background-color: var(--island-background-color);
+    position: relative;
+    bottom: 0;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
-.footer a {
-    padding-left: 10px;
+
+.footer-item {
+    padding: 10px;
 }
 
+/* Links */
 a {
     text-decoration: none;
-    color: var(--picton-blue);
-    transition: .3s;
+    color: var(--link-color);
+    transition: 0.3s;
 }
+
 a:hover {
-    color: var(--prussian-blue);
+    color: var(--link-hover-color);
 }
+
+/* Content Centering */
 .content-center {
     display: flex;
     align-items: center;
@@ -78,49 +110,110 @@ a:hover {
     width: 100%;
     min-height: 100%;
 }
-/* Default styles */
+
+/* Content Container */
 .content-container {
     width: 100%;
     min-height: 100vh;
-    border-radius: 25px;
-    background-color: var(--rich-black);
+    border-radius: 0;
+    background-color: var(--primary-background-color);
     padding: 15px;
 }
 
-/* Tablet and small screens */
 @media (min-width: 600px) {
     .content-container {
         width: 80%;
+        border-radius: 25px;
     }
 }
 
-/* Larger screens */
 @media (min-width: 1024px) {
     .content-container {
         width: 70%;
+        border-radius: 25px;
     }
 }
+
 h1 {
-    margin-top: 0px;   
+    margin-top: 0;
 }
 
-/* Glossary CSS */
+/* Glossary */
 .glossary-key {
-    color: green; /* Set text color to green */
+    display: inline-block;
+    color: var(--glossary-highlight-color);
 }
 
 .glossary-tooltip {
     display: none;
     position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px;
+    color: var(--primary-text-color);
+    background-color: var(--glossary-background-color);
+    border: 2px solid var(--glossary-border-color);
+    padding: 10px;
     z-index: 100;
     font-size: initial;
     font-weight: initial;
     max-width: 25em;
+    width: auto;
+    border-radius: 15px;
 }
 
 .glossary-key:hover > .glossary-tooltip {
     display: block;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Table Header */
+table th {
+    background-color: var(--table-header-background);
+    color: var(--table-header-text);
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--table-border);
+}
+
+/* Table Rows */
+table tr {
+    transition: background-color 0.3s ease;
+    border-bottom: 1px dashed var(--table-border);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--table-row-background-alt);
+}
+
+table tr:hover {
+    background-color: var(--table-hover-background);
+}
+
+/* Table Cells */
+table td {
+    padding: 12px;
+    color: var(--table-cell-text);
+    font-size: 1em;
+}
+
+/* Glowing Text for Headers */
+table th {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.6), 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em;
+    }
 }

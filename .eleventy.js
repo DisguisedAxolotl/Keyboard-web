@@ -3,7 +3,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("views/_includes/main.css");
     eleventyConfig.addPassthroughCopy("views/_data/glossary.json");
     eleventyConfig.addPassthroughCopy("views/_scripts/glossary.js");
-  
     return {
       passthroughFileCopy: true,
       dir: {

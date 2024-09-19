@@ -1,3 +1,4 @@
+
 doctype html
 html(lang="en")
   head
@@ -8,9 +9,6 @@ html(lang="en")
     title #{title} - Halkowich.com
     block scripts
     script(src="../_scripts/glossary.js", defer) 
-    //- script(defer). 
-    //-   applyGlossaryTooltips();
-    //-   console.log('Script is loaded');
   body
     div.header
       .island
@@ -34,3 +32,13 @@ html(lang="en")
         p &copy; Jasper Halkowich 2024-#{currentYear}
       .footer-item
         a(href="mailto:jasper@halkowich.com") Jasper@Halkowich.com
+      .footer-item
+        p Built with 
+          a(href="https://11ty.dev") 11ty 
+          | and 
+          a(href="https://pugjs.org") Pug
+
+
+
+
+
