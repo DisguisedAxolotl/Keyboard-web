@@ -6,7 +6,7 @@
     --secondary-background-color: #061a3b;
 
     /* Glossary Colors */
-    --glossary-highlight-color: #00ff00;
+    --glossary-highlight-color: #9cd3b3;
     --glossary-background-color: #062f06;
     --glossary-border-color: #00ff00;
 
@@ -216,4 +216,14 @@ table th {
     table {
         font-size: 0.9em;
     }
+}
+
+.code {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-block;
 }
