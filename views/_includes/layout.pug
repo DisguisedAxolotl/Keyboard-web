@@ -8,8 +8,10 @@ html(lang="en")
     link(rel="stylesheet" href="/_includes/main.css")
     title #{title} - Halkowich.com
     block scripts
-    script(src="../_scripts/glossary.js", defer) 
+    script(src="../_includes/glossary.js", defer) 
+    script(src="../_includes/clipboard.js", defer) 
   body
+    .copied: p Copied!
     div.header
       .island
         a.header-item.title(href="../") Halkowich.com
@@ -42,7 +44,7 @@ html(lang="en")
       .footer-item 
         a(href="https://github.com/DisguisedAxolotl/Keyboard-web") Website source
       .footer-item
-        a(href="#") Keyboard source
+        a(href="https://github.com/DisguisedAxolotl/Keyboard-return") Keyboard source
 
 
 

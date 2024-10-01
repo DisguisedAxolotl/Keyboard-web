@@ -2,7 +2,8 @@ module.exports = function(eleventyConfig) {
     // Pass through the CSS file correctly
     eleventyConfig.addPassthroughCopy("views/_includes/main.css");
     eleventyConfig.addPassthroughCopy("views/_data/glossary.json");
-    eleventyConfig.addPassthroughCopy("views/_scripts/glossary.js");
+    eleventyConfig.addPassthroughCopy("views/_includes/glossary.js");
+    eleventyConfig.addPassthroughCopy("views/_includes/clipboard.js");
     // Collection for PCB posts
     eleventyConfig.addCollection('pcb', function(collectionApi) {
       return collectionApi.getFilteredByTag('pcb');
