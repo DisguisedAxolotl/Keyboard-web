@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Not test message lol\" && exit 1",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/DisguisedAxolotl/Keyboard-web/issues"
   },
-  "homepage": "https://github.com/DisguisedAxolotl/Keyboard-web#readme"
+  "homepage": "https://github.com/DisguisedAxolotl/Keyboard-web#readme",
+  "devDependencies": {
+    "@11ty/eleventy-plugin-pug": "^1.0.0"
+  }
 }

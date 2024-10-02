@@ -18,7 +18,7 @@ block content
     p For the gitignore template, select Kicad. This will help prevent sensitive information from making its way onto the public internet. 
     p Pick a license. Use 
         a(href="https://choosealicense.com/") choosealisence.com
-        | . I will use the GNU GPLV3 because it is permissive, but it doesn't let people make closed source or proprietary versions. 
+        | . I will use the CERN Open Hardware Licence Version 2 because it doesn't let people make closed source or proprietary versions. 
     p Click create repository. 
     p Now we need to install the GitHub Command Line Interface (cli): 
         a(href="https://cli.github.com/" target="_blank") GitHub CLI 
@@ -34,4 +34,11 @@ block content
         |  To initialize the folder as a git repository
     p Connect Your Local Folder to the GitHub Repository: 
         span.code git remote add origin https://github.com/your-username/your-repo-name.git
+    p Now, every time you make a signifact change you want to be added to the verisoning system, just run: 
+    p.code git add .
+    p.code git commit -m "Initial commit"
+    p And then, push your changes to the remote repository: 
+    p.code git push -u origin master
+    p test
+
 
