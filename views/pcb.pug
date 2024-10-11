@@ -34,11 +34,34 @@ block content
         |  To initialize the folder as a git repository
     p Connect Your Local Folder to the GitHub Repository: 
         span.code git remote add origin https://github.com/your-username/your-repo-name.git
-    p Now, every time you make a signifact change you want to be added to the verisoning system, just run: 
+    p Now, every time you make a significant change you want to be added to the verisoning system, just run: 
     p.code git add .
+    br
     p.code git commit -m "Initial commit"
     p And then, push your changes to the remote repository: 
     p.code git push -u origin master
-    p test
+    h3 Creating the Schematic 
+    p Open KiCad. Create a new project in your git folder. Name it with the name of your project. 
+    p Open the schematic file for the project, by clicking on the Schematic Editor.
+    p Welcome to the schematic editor, where we will build all of the circuits and connections for the PCB. 
+    p here is a list of keyboard shortcuts that work in this software: 
+    h4 Choosing a microcontroller: 
+    p The first step of this project will be chosing a microcontroller that can accomodate all of the features your project needs.
+    p The first and most obvious consideration is connectivity - Do you want your keyboard to have bluetooth connectivity? If so, should it also have USB connectivity? 
+    p It is preferable to find a board with all of those features built in, so you don't have to do crazy workarounds to make those things work. 
+    p Look at Adafruit's    
+        a(href="https://learn.adafruit.com/how-to-choose-a-microcontroller/overrview") Guide on chosing a microcontroller.
+    p Another consideration should be compatibility with firmwares. Visit 
+        a(href="https://docs.qmk.fm") QMK Docs 
+        | for compatibility details.
+
+    p For my keyboard, I want bluetooth support, lots of pins, and ideally QMK support. 
+    p One of my favorite new microcontrollers, the ESP32-S3, has most of these features, with the notable exception being QMK Support. I am comfortable enough with firmware, but that should be a large deterrent to someone less advanced. 
+    p I'm going to use it anyways, because of the ease of hardware development.
+    p I'm going to start with a stepping stone: 
+        a(href="") The Adafruit Feather ESP32 S3.
+    p This board's design files are already 
+        a(href="") open source under the CC BY-SA 3.0
+        | , so we can use and modify them in our project. All we have to do is credit the authors, Adafruit, in our own open-source project. We can even use the derivative commerically. 
 
 
