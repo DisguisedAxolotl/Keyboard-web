@@ -5,7 +5,8 @@ function applyGlossaryTooltips() {
     const glossary = window.glossary || {}; // Use the glossary data from the script
 
     function replaceTextWithTooltip(node) {
-        if (node.nodeType === Node.TEXT_NODE) {
+        // Ensure the node is a text node and its parent is a <p> element
+        if (node.nodeType === Node.TEXT_NODE && node.parentNode.tagName === 'P') {
             const text = node.textContent;
             let newText = text;
 
@@ -23,10 +24,14 @@ function applyGlossaryTooltips() {
                 node.parentNode.replaceChild(span, node);
             }
         } else if (node.nodeType === Node.ELEMENT_NODE) {
-            node.childNodes.forEach(replaceTextWithTooltip);
+            // Skip headers and anchor tags
+            if (!['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'A'].includes(node.tagName)) {
+                node.childNodes.forEach(replaceTextWithTooltip);
+            }
         }
     }
 
+    // Apply the function to all elements within the content container
     document.querySelectorAll('.content-container').forEach(element => {
         element.childNodes.forEach(replaceTextWithTooltip);
     });

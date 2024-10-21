@@ -42,6 +42,7 @@ block content
     p.code git push -u origin master
     h3 Creating the Schematic 
     p Open KiCad. Create a new project in your git folder. Name it with the name of your project. 
+    img(src="/../_includes/kicadProjectView.png", alt="Kicad project view, showing ")
     p Open the schematic file for the project, by clicking on the Schematic Editor.
     p Welcome to the schematic editor, where we will build all of the circuits and connections for the PCB. 
     p here is a list of keyboard shortcuts that work in this software: 
@@ -59,9 +60,34 @@ block content
     p One of my favorite new microcontrollers, the ESP32-S3, has most of these features, with the notable exception being QMK Support. I am comfortable enough with firmware, but that should be a large deterrent to someone less advanced. 
     p I'm going to use it anyways, because of the ease of hardware development.
     p I'm going to start with a stepping stone: 
-        a(href="") The Adafruit Feather ESP32 S3.
+        a(href="https://www.adafruit.com/product/5323") The Adafruit Feather ESP32 S3.
     p This board's design files are already 
-        a(href="") open source under the CC BY-SA 3.0
+        a(href="https://github.com/adafruit/Adafruit-Feather-ESP32-S3-PCB?tab=readme-ov-file") open source under the CC BY-SA 3.0
         | , so we can use and modify them in our project. All we have to do is credit the authors, Adafruit, in our own open-source project. We can even use the derivative commerically. 
-
+    p All we have to do for this head start is find the repository hosting the board designs 
+        a(href="https://github.com/adafruit/Adafruit-Feather-ESP32-S3-PCB?tab=readme-ov-file") here. 
+    p Download the schematic file (The file with extension .sch.)
+    p Import it into Kicad with File>Import>Non-Kicad Schematic
+    p This process is exactly the same with other microcontrollers. You can start from scratch, or build upon an already existing board.
+    p Now, look at the different components of the schematic. It's split into various sections. 
+    p There are separate elements for the usb connector, the pins, and the microcontroller itself.
+    h4 Importing Libraries
+    p Before we add all of the circuitry for our keyboard, we must add some libraries filled with all of the different components we're going to use. 
+    p I like to use 
+        a(href="https://github.com/ai03-2725/MX_V2") AI03's brilliant MXV2 libraries
+        | . To use these, there are no special symbols that need to be imported. This library uses default built-in symbols, which is incredibly convenient.
+    p Open the 
+        a(href="https://github.com/ai03-2725/MX_V2") link to the github 
+        | and click code>Download .zip
+    p Continue this later 
+    p Now, we have to decide on a layout. 
+        a(href="") Here 
+        | Is a great guide on drop.com for different layouts.
+    p Use 
+        a(href="https://www.keyboard-layout-editor.com/#/") Keyboard-Layout-Editor to make it real. Save that design for later. 
+    p Once you have your design, divide the keys into rows and columns to connect to the microcontroller. Our keyboard will use a key matrix, in which current is passed through each of the rows, and current is read at each of the columns. The microcontroller puts voltage into one of the rows and reads all of the columns, and if one of the columns is active, the key at that index was pressed. This is repeeated for every row, hundreds or thousands of times per second. 
+    p Note the number of rows and columns, and come back to the schematic. 
+    p Add a symbol for SW_Push by pressing the A key and searching for it.
+    p SW Push will correspond to the footprint for the key switch in the library we just downloaded. 
+    p Add another symbol, D_Small, and connect it to the right pin (Pin 2) of the switch.
 
