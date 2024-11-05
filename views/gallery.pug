@@ -1,0 +1,27 @@
+extends _includes/layout.pug
+
+block scripts
+    script.
+        // JavaScript to handle image cycling
+        document.addEventListener("DOMContentLoaded", function() {
+        let images = document.querySelectorAll(".gallery img");
+        let currentIndex = 0;
+        
+        // Function to show the next image
+        function showNextImage() {
+            images[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add("active");
+        }
+
+        // Automatically cycle through images every 3 seconds
+        setInterval(showNextImage, 3000);
+        });
+
+block content
+    h1.header Gallery
+
+    // Image gallery container
+    .gallery
+        each imgName in ['image1.jpg', 'image2.jpg', 'image3.jpg'] // Add your image filenames here
+        img(src=`../_includes/images/${imgName}`, alt='Gallery Image', class=(imgName == 'image1.jpg' ? 'active' : ''))

@@ -10,6 +10,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("views/_data/glossary.json");
   eleventyConfig.addPassthroughCopy("views/_includes/glossary.js");
   eleventyConfig.addPassthroughCopy("views/_includes/clipboard.js");
+  eleventyConfig.add
 
   // Collection for PCB posts
   eleventyConfig.addCollection('pcb', function(collectionApi) {
