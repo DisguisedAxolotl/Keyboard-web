@@ -1,0 +1,53 @@
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/_includes/main.css")
+    title #{title} - Halkowich.com
+    block scripts
+    script(src="../_includes/glossary.js", defer) 
+    script(src="../_includes/clipboard.js", defer) 
+  body
+    .copied: p Copied!
+    div.header
+      .island
+        a.header-item.title(href="../") Home
+        - 
+          var pages = {
+            pcb: "PCB",
+            case: "Case",
+            software: "Software",
+            about: "About",
+            glossary: "Key",
+            gallery: "Gallery"
+          }
+        each value, key in pages
+          a.header-item(href='/' + key) #{value}
+    .content-center 
+      .content-container
+        block content
+    .footer 
+      .footer-item
+        - const currentYear = new Date().getFullYear();
+        p &copy; Jasper Halkowich 2024-#{currentYear}
+      .footer-item
+        a(href="mailto:jasper@halkowich.com") Jasper@Halkowich.com
+      .footer-item
+        p Built with 
+          a(href="https://11ty.dev") 11ty
+          | , 
+          a(href="https://pugjs.org") Pug
+          | , and hosted on 
+          a(href="https://keyboard-web.pages.dev") Cloudflare pages 
+      .footer-item 
+        a(href="https://github.com/DisguisedAxolotl/Keyboard-web") Website source
+      .footer-item
+        a(href="https://github.com/DisguisedAxolotl/Keyboard-return") Keyboard source
+
+
+
+
+

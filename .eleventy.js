@@ -10,22 +10,6 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("views/_data/glossary.json");
   eleventyConfig.addPassthroughCopy("views/_includes/glossary.js");
   eleventyConfig.addPassthroughCopy("views/_includes/clipboard.js");
-  eleventyConfig.add
-
-  // Collection for PCB posts
-  eleventyConfig.addCollection('pcb', function(collectionApi) {
-    return collectionApi.getFilteredByTag('pcb');
-  });
-
-  // Collection for Software posts
-  eleventyConfig.addCollection('software', function(collectionApi) {
-    return collectionApi.getFilteredByTag('software');
-  });
-
-  // Collection for Case posts
-  eleventyConfig.addCollection('case', function(collectionApi) {
-    return collectionApi.getFilteredByTag('case');
-  });
 
   return {
     passthroughFileCopy: true,
